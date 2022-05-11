@@ -1,10 +1,9 @@
 import React from 'react';
 import { TouchableOpacity, StyleSheet } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
+import { Ionicons, FontAwesome } from '@expo/vector-icons';
 import { createStackNavigator } from '@react-navigation/stack';
 import TabNavigator from './TabNavigator';
 import Colors from '../config/colors';
-import Header from '../components/Header';
 import DetailScreen from '../screens/DetailScreen';
 import usePosts from '../hooks/usePosts';
 
@@ -29,12 +28,21 @@ const RootNavigator = () => {
     }}>
       <Stack.Screen
         name='TabNavigator'
-        options={{
+        options={props => ({
           title: 'Posts',
-          header: headerProps => (
-            <Header onReload={onReload} {...headerProps}/>
-          )
-        }}
+          headerTitleAlign: 'center',
+          headerRight: () => (
+            <TouchableOpacity 
+              onPress={() => onReload()} 
+              style={styles.favoriteIcon}>
+              <Ionicons
+                size={24}
+                color={Colors.white}
+                name='reload'
+              />
+            </TouchableOpacity>
+          ),
+        })}
       >
         {props => (
           <TabNavigator 
