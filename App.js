@@ -7,9 +7,11 @@ import RootNavigator from './app/navigation/RootNavigator';
    
 export default function App() {
   return (
-    <NavigationContainer>
-      <StatusBar barStyle='light-content' backgroundColor={Colors.primary}/>
-      <RootNavigator/> 
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <StatusBar barStyle='light-content' backgroundColor={Colors.primary}/>
+        <RootNavigator/> 
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }

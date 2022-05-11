@@ -10,16 +10,18 @@ const Header = ({onReload, ...rest}) => {
 
   return (
     <View style={styles.container}>
-      <Text numberOfLines={1} style={styles.text}>
-        {options.title}
-      </Text>
-      <TouchableOpacity onPress={onReload} style={styles.icon}>
-        <Ionicons
-          color={Colors.white}
-          name='md-reload-sharp'
-          size={24}
-        />
-      </TouchableOpacity>
+      <View style={styles.children}>
+        <Text numberOfLines={1} style={styles.text}>
+          {options.title}
+        </Text>
+        <TouchableOpacity onPress={onReload} style={styles.icon}>
+          <Ionicons
+            color={Colors.white}
+            name='md-reload-sharp'
+            size={24}
+          />
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
@@ -29,6 +31,14 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
     height: Platform.OS === 'ios' ? Constants.statusBarHeight + 44 : 56,
     justifyContent: 'center'
+  },
+  children: {
+    marginTop:
+    Platform.OS === 'ios'
+      ? Constants.statusBarHeight > 20
+        ? Constants.statusBarHeight - 10
+        : Constants.statusBarHeight
+      : 0,
   },
   icon: {
     position: 'absolute', 
