@@ -10,7 +10,7 @@ const Posts = ({
   data, 
   emptyMessage = 'Press on reload to load posts.',
   loading, 
-  loadingItems = 25, 
+  loadingItems = 50, 
   onDeleteAll, 
   onItemPressed, 
   onReload, 
