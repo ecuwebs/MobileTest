@@ -13,6 +13,7 @@ const RootNavigator = () => {
 
   const { 
       attrs, 
+      loading,
       onDetailFavorite, 
       onDeleteAll, 
       onReload } = usePosts();
@@ -28,7 +29,7 @@ const RootNavigator = () => {
     }}>
       <Stack.Screen
         name='TabNavigator'
-        options={props => ({
+        options={() => ({
           title: 'Posts',
           headerTitleAlign: 'center',
           headerRight: () => (
@@ -47,6 +48,7 @@ const RootNavigator = () => {
         {props => (
           <TabNavigator 
             favorites={attrs.favorites}
+            loading={loading}
             posts={attrs.posts} 
             onDeleteAll={onDeleteAll} 
             onReload={onReload} 

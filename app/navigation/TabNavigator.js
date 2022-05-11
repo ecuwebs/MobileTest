@@ -6,7 +6,7 @@ import FavoritesScreen from '../screens/FavoritesScreen';
 
 const Tab = createMaterialTopTabNavigator();
 
-const TabNavigator = ({ onDeleteAll, onReload, favorites, posts, ...rest }) => {
+const TabNavigator = ({ onDeleteAll, onReload, favorites, loading, posts, ...rest }) => {
 
   const {navigation} = rest;
 
@@ -33,6 +33,7 @@ const TabNavigator = ({ onDeleteAll, onReload, favorites, posts, ...rest }) => {
         {props => (
           <AllPostsScreen 
             items={posts} 
+            loading={loading}
             onDeleteAll={onDeleteAll}
             onItemPressed={onItemPressed}
             onReload={onReload}
@@ -45,6 +46,7 @@ const TabNavigator = ({ onDeleteAll, onReload, favorites, posts, ...rest }) => {
         {props => (
           <FavoritesScreen 
             items={favorites}
+            loading={loading}
             onItemPressed={onItemPressed}
             {...props}
           />

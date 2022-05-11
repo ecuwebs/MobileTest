@@ -35,7 +35,7 @@ const Posts = ({
 
   if (loading) {
     return getFlatList(
-      fill(loadingItems, (_, index) => ({ id_product: index.toString() })),
+      fill(loadingItems, (_, index) => ({ id: index.toString() })),
       () => (
         <PostsCard loading />
       )
