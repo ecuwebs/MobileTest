@@ -3,7 +3,7 @@ import Posts from '../components/Posts';
 import Screen from '../components/Screen';
 
 const FavoritesScreen = ({ items, onItemPressed }) => 
-  <Screen>
+  <Screen fullScreen={true}>
     <Posts 
       data={items} 
       emptyMessage='There are no favorites.'

@@ -3,7 +3,7 @@ import Posts from '../components/Posts';
 import Screen from '../components/Screen';
 
 const AllPostsScreen = ({ items, onDeleteAll, onItemPressed, onReload }) => 
-  <Screen>
+  <Screen fullScreen={true}>
     <Posts 
       data={items} 
       onItemPressed={onItemPressed} 

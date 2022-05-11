@@ -5,7 +5,6 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const Screen = ({ children, style, fullScreen = false }) => {
   const { bottom: safeAreaInsetBottom } = useSafeAreaInsets();
-
   return (
     <SafeAreaView
       style={[
