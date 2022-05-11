@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import Colors from '../config/colors';
 
 const AppText = ({ children, style, ...otherProps }) => {
@@ -29,10 +29,6 @@ const styles = StyleSheet.create({
   loadingText: {
     backgroundColor: Colors.mediumDark,
     color: Colors.mediumDark,
-  },
-  text: {
-    fontSize: 18,
-    fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
   },
 });
 

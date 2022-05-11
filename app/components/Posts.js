@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, SafeAreaView } from 'react-native';
+import { FlatList } from 'react-native';
 import { Button } from './button'
 import PostsCard from './PostsCard';
 import Separator from './Separator';

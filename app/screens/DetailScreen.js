@@ -4,6 +4,7 @@ import { getUser } from '../api/getUser';
 import { getComments } from '../api/getComments';
 import useApi from '../hooks/useApi';
 import Colors from '../config/colors';
+import AppText from '../components/AppText';
 
 const DetailScreen = ({ route }) => {
 
@@ -34,29 +35,29 @@ const DetailScreen = ({ route }) => {
     <ScrollView 
       showsHorizontalScrollIndicator={false} 
       showsVerticalScrollIndicator={false}>
-      <Text style={styles.header}>Description</Text>
-      <Text style={styles.paddingHorizontal}>{post.body}</Text>
+      <AppText style={styles.header}>Description</AppText>
+      <AppText style={styles.paddingHorizontal}>{post.body}</AppText>
 
       
       {user && (
         <>
-          <Text style={styles.header}>User</Text>
+          <AppText style={styles.header}>User</AppText>
           <View style={styles.paddingHorizontal}>
-            {user.name && <Text style={styles.marginBottom}>Name: { user.name }</Text>} 
-            {user.email && <Text style={styles.marginBottom}>Email: { user.email }</Text>} 
-            {user.phone && <Text style={styles.marginBottom}>Phone: { user.phone }</Text>} 
-            {user.website && <Text>Website: { user.website }</Text>} 
+            {user.name && <AppText style={styles.marginBottom}>Name: { user.name }</AppText>} 
+            {user.email && <AppText style={styles.marginBottom}>Email: { user.email }</AppText>} 
+            {user.phone && <AppText style={styles.marginBottom}>Phone: { user.phone }</AppText>} 
+            {user.website && <AppText>Website: { user.website }</AppText>} 
           </View>
         </>
       )}
       
       {comments.length > 0 && (
         <View style={{ marginBottom: 40 }}>
-          <Text style={styles.header}>Comments</Text>
+          <AppText style={styles.header}>Comments</AppText>
           <View style={styles.paddingHorizontal}>
             {comments.map((comment, key) => (
               <View key={key.toString()} style={[ styles.commentBlock, styles.marginBottom ]}>
-                <Text>{comment.body}</Text>
+                <AppText>{comment.body}</AppText>
               </View>
             ))}
           </View>

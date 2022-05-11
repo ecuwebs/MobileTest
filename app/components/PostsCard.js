@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, TouchableWithoutFeedback, Text } from 'react-native';
+import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import Colors from '../config/colors';
 import AppText from './AppText';
@@ -31,7 +31,7 @@ const PostsCard = ({ item, onPress, style, ...otherProps }) => {
         )}
 
         <View style={[ styles.title, { paddingLeft: item.favorite ? 0 : 10 } ]}>
-          <Text>{ item.title }</Text>
+          <AppText>{ item.title }</AppText>
         </View>
 
       </View>

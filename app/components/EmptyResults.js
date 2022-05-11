@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import AppText from './AppText';
 
 const EmptyResults = ({
   msg,
@@ -8,7 +9,7 @@ const EmptyResults = ({
 }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{msg}</Text>
+      <AppText style={styles.text}>{msg}</AppText>
       {onReload && (
         <TouchableOpacity onPress={onReload}>
           <Ionicons

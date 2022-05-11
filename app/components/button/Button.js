@@ -2,11 +2,11 @@ import React from 'react';
 import {
   ActivityIndicator,
   StyleSheet,
-  Text,
   TouchableOpacity,
   View,
 } from 'react-native';
 import Colors from '../../config/colors';
+import AppText from '../AppText';
 import btnProps from './btnProps';
 
 const AppButton = ({
@@ -84,9 +84,9 @@ const AppButton = ({
             </View>
           )
         )}
-        <Text style={[styles.text, textSize, { color: Colors[textColor] }]}>
+        <AppText style={[styles.text, textSize, { color: Colors[textColor] }]}>
           {title}
-        </Text>
+        </AppText>
       </View>
     </TouchableOpacity>
   );
